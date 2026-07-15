@@ -1,2 +1,2 @@
-# ploshi-figur-planimetria
+# ploshchi-figur-planimetria
 Тренажер на площі фігур
