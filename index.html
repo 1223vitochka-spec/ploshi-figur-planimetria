@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Майстер площ планіметричних фігур</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="loading">
+
+<div class="loader"></div>
+
+<h2>Завантаження...</h2>
+
+</div>
+
+
+<header>
+
+<div class="logo">
+
+📐 Майстер площ
+
+</div>
+
+<nav>
+
+<button id="menuHome">🏠 Головна</button>
+
+<button id="menuStudy">📖 Вивчення</button>
+
+<button id="menuCards">🃏 Картки</button>
+
+<button id="menuTest">🎯 Тест</button>
+
+<button id="menuBlitz">⚡ Бліц</button>
+
+<button id="menuDrag">🧩 З'єднай</button>
+
+<button id="menuStats">🏆 Статистика</button>
+
+</nav>
+
+</header>
+
+
+<main>
+
+<!-- ========================= -->
+
+<section id="home" class="page active">
+
+<div class="hero">
+
+<h1>
+
+Площі планіметричних фігур
+
+</h1>
+
+<p>
+
+Інтерактивний тренажер
+
+для 7–9 класів
+
+</p>
+
+<div class="heroButtons">
+
+<button id="startLearning">
+
+📖 Почати навчання
+
+</button>
+
+<button id="startTesting">
+
+🎯 Почати тест
+
+</button>
+
+</div>
+
+</div>
+
+<div class="posterBox">
+
+<img
+
+src="images/planimetry.jpg"
+
+id="poster"
+
+alt="Плакат"
+
+>
+
+<div id="posterHint">
+
+Натисніть на фігуру
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+
+<section id="study" class="page">
+
+<div class="studyCard">
+
+<div id="studyImage">
+
+</div>
+
+<h2 id="studyTitle">
+
+Квадрат
+
+</h2>
+
+<div id="studyFormula">
+
+S=a²
+
+</div>
+
+<div id="studyDescription">
+
+Опис
+
+</div>
+
+<div class="studyButtons">
+
+<button id="prevFigure">
+
+⬅
+
+</button>
+
+<button id="flipFigure">
+
+🔄
+
+</button>
+
+<button id="nextFigure">
+
+➡
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+
+<section id="cards" class="page">
+
+<div id="flashCard">
+
+<div class="front">
+
+Фігура
+
+</div>
+
+<div class="back">
+
+Формула
+
+</div>
+
+</div>
+
+<div class="flashButtons">
+
+<button id="flashPrev">
+
+⬅
+
+</button>
+
+<button id="flashFlip">
+
+Перевернути
+
+</button>
+
+<button id="flashNext">
+
+➡
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+
+<section id="test" class="page">
+
+<div class="questionCard">
+
+<div id="questionNumber">
+
+1 / 15
+
+</div>
+
+<h2 id="questionTitle">
+
+Запитання
+
+</h2>
+
+<div id="questionImage">
+
+</div>
+
+<div id="answers">
+
+<!-- JS -->
+
+</div>
+
+<div class="testInfo">
+
+<div>
+
+⭐ <span id="score">
+
+0
+
+</span>
+
+</div>
+
+<div>
+
+⏱ <span id="timer">
+
+00:00
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+
+<section id="blitz" class="page">
+
+<h2>
+
+⚡ Бліц
+
+</h2>
+
+<div id="blitzTime">
+
+60
+
+</div>
+
+<div id="blitzQuestion">
+
+Запитання
+
+</div>
+
+<div id="blitzAnswers">
+
+</div>
+
+<div id="blitzScore">
+
+0
+
+</div>
+
+</section>
+<!-- ========================= -->
+
+<section id="drag" class="page">
+
+<h2>🧩 З'єднай фігуру з формулою</h2>
+
+<div class="dragContainer">
+
+<div class="dragColumn">
+
+<h3>Фігури</h3>
+
+<div id="figuresList">
+
+<!-- JS -->
+
+</div>
+
+</div>
+
+<div class="dragColumn">
+
+<h3>Формули</h3>
+
+<div id="formulasList">
+
+<!-- JS -->
+
+</div>
+
+</div>
+
+</div>
+
+<div class="center">
+
+<button id="checkDrag">
+
+Перевірити
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+
+<section id="statistics" class="page">
+
+<h2>
+
+🏆 Статистика
+
+</h2>
+
+<div class="statsGrid">
+
+<div class="statCard">
+
+<div class="statNumber"
+
+id="gamesPlayed">
+
+0
+
+</div>
+
+<div class="statTitle">
+
+Ігор
+
+</div>
+
+</div>
+
+<div class="statCard">
+
+<div class="statNumber"
+
+id="bestScore">
+
+0
+
+</div>
+
+<div class="statTitle">
+
+Найкращий результат
+
+</div>
+
+</div>
+
+<div class="statCard">
+
+<div class="statNumber"
+
+id="averageScore">
+
+0%
+
+</div>
+
+<div class="statTitle">
+
+Середній результат
+
+</div>
+
+</div>
+
+<div class="statCard">
+
+<div class="statNumber"
+
+id="bestTime">
+
+00:00
+
+</div>
+
+<div class="statTitle">
+
+Найкращий час
+
+</div>
+
+</div>
+
+</div>
+
+<h3>
+
+Останні результати
+
+</h3>
+
+<table id="resultsTable">
+
+<thead>
+
+<tr>
+
+<th>Дата</th>
+
+<th>Бали</th>
+
+<th>Час</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ========================= -->
+
+<section id="finish" class="page">
+
+<div class="finishBox">
+
+<h1>
+
+🎉 Вітаємо!
+
+</h1>
+
+<div id="finishStars">
+
+⭐⭐⭐⭐⭐
+
+</div>
+
+<h2>
+
+Ваш результат
+
+</h2>
+
+<div id="finishScore">
+
+15 / 15
+
+</div>
+
+<p id="finishMessage">
+
+Чудовий результат!
+
+</p>
+
+<div class="finishButtons">
+
+<button id="playAgain">
+
+🔄 Ще раз
+
+</button>
+
+<button id="backHome">
+
+🏠 Головне меню
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ========================= -->
+
+<div id="toast">
+
+Правильно!
+
+</div>
+
+<!-- ========================= -->
+
+<div id="confetti">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<!-- ========================= -->
+
+<div id="modal"
+
+class="hidden">
+
+<div class="modalContent">
+
+<h2 id="modalTitle">
+
+Пояснення
+
+</h2>
+
+<p id="modalText">
+
+...
+
+</p>
+
+<button id="closeModal">
+
+Закрити
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+
+<audio
+id="correctSound"
+preload="auto">
+
+<source
+src="sounds/correct.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio
+id="wrongSound"
+preload="auto">
+
+<source
+src="sounds/wrong.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio
+id="finishSound"
+preload="auto">
+
+<source
+src="sounds/finish.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<!-- ========================= -->
+
+<footer>
+
+<div>
+
+© 2026
+
+Майстер площ планіметричних фігур
+
+</div>
+
+<div>
+
+Створено для уроків математики
+
+</div>
+
+</footer>
+
+<script src="data.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
